@@ -1,4 +1,4 @@
-## Oppgave 4: Kunder - referansetabeller
+ ## Oppgave 4: Kunder - referansetabeller
 
 Ved å opprette objekt av klassen `Customer` fra oppgave 3 kan vi representere kunder for en strømleverandør.
 

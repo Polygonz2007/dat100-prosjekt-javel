@@ -8,61 +8,77 @@ public class Customers {
 
     // a) Complete constructor
     public Customers(int size) {
-
-        // TODO
-
+        customers = new Customer[size];
     }
 
     // b) count number of non-null references
     public int countNonNull() {
-
-
         int count = 0;
 
-        // TODO
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] != null) count++;
+        }
 
         return count;
     }
 
     // c) return reference to customer with given id (if exists)
     public Customer getCustomer(int customer_id) {
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] == null) continue;
+            if (customers[i].getCustomerId() == customer_id) return customers[i];
+        }
 
-        boolean funnet = false;
-        Customer c = null;
-
-        // TODO
-
-        return c;
+        return null;
     }
 
     // d) add a customer to the reference table
     public boolean addCustomer(Customer c) {
 
-        boolean inserted = false;
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] == null) {
+                customers[i] = c;
+                return true;
+            }
+        }
 
-        // TODO
-
-        return inserted;
+        return false;
     }
 
     // e) remove customer with given id from reference table
     public Customer removeCustomer(int customer_id) {
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] == null) continue;
+            if (customers[i].getCustomerId() == customer_id) {
+                Customer c = customers[i];
+                customers[i] = null;
+                return c;
+            }
+        }
 
-        boolean deleted = false;
-        Customer c = null;
-
-        // TODO
-
-        return c;
+        return null;
     }
 
     // f) return reference table with all customers
     public Customer[] getCustomers() {
 
-        Customer[] customers = null;
+        Customer[] new_customers;
 
-        // TODO
+        // Count customers
+        int count = 0;
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] != null) count++;
+        }
 
-        return customers;
+        // Create
+        new_customers = new Customer[count];
+        int index = 0;
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] == null) continue;
+            new_customers[index] = customers[i];
+            index++;
+        }
+
+        return new_customers;
     }
 }

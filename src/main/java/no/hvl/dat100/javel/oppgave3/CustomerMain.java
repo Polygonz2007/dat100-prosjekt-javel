@@ -11,11 +11,16 @@ public class CustomerMain {
         System.out.println("==============");
         System.out.println();
 
-        /*
-        TODO
+        // Test cutsomer
+        Customer oskar = new Customer("Oskar Gønnerik Keeznes", "agentorw@keezy.letsgetit", 2, PowerAgreementType.SPOTPRICE);
+        System.out.println(oskar.toString() + "\n");
+        System.out.println("Oskar bruker " + oskar.getAgreement() + " og er customer id " + oskar.getCustomerId() + "\n");
 
-         Write code that creates a Customer object and teste the methods implemented in the class
+        // Change some things
+        oskar.setAgreement(PowerAgreementType.NORGESPRICE);
+        oskar.setEmail("oskar@madmail.net");
 
-        */
+        // Print again
+        System.out.println(oskar.toString());
     }
 }

@@ -49,7 +49,7 @@ public class DailyPower {
             return 0;
 
         // Some kind of support is given
-        return usage * (price * PERCENTAGE);
+        return usage * (over_price * PERCENTAGE);
     }
 
     // f) compute power support for a single day
